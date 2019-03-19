@@ -12,25 +12,7 @@ def random_weighted_choice(arr, weights):
 class MarkovChain:
     def __init__(self):
         self.graph = {"": {}}
-
-    '''
-    def populate_chain(self, inFile, nGram):
-        previous_word = ""
-        with open(inFile, "r") as f:
-            lines = f.readlines()
-            for line in lines:
-                words = line.strip().split(" ")
-                for word in words:
-                    word = word.lower()
-                    word = word.translate(str.maketrans('', '', string.punctuation))
-                    if word not in self.graph.keys():
-                        self.graph[word.lower()] = {}
-                    if word not in self.graph[previous_word].keys():
-                        self.graph[previous_word][word] = 0
-                    self.graph[previous_word][word] += 1
-                    previous_word = word
-    '''
-
+        
     def populate_chain(self, inFile, n):
         previous_word = ""
         with open(inFile, "r") as f:
